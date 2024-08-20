@@ -17,21 +17,19 @@ class Biblioteca {
 
    public function listarLivros($nome) {
         // CODIFICAR
-        var_dump($this->livros);die();
         foreach($this->livros as $livro){
-            echo $livro;
+            echo $livro->exibirDetalhes()."<br>";
         }
         $nome->exibirTitulo();
    }
 
    public function emprestarLivro($titulo) {
+    if(empty($this->livros)){
+        echo "Nenhum livro disponível na biblioteca";
+    }
        foreach ($this->livros as $livro) {
-           if ($livro->exibirTitulo() == $titulo) {
-               $livro->emprestar();
-               return;
-           }
+        echo $livro->exibirTitulo(); 
        }
-       echo " Livro '$titulo' não encontrado na biblioteca.<br>";
    }
 
    public function devolverLivro($titulo) {

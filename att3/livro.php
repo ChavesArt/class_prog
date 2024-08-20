@@ -1,10 +1,10 @@
 <?php
 
 class Livro{
-    public $titulo;
-    public $autor;
-    public $anoPublic;
-    public $disponivel;
+    private $titulo;
+    private $autor;
+    private $anoPublic;
+    private $disponivel;
 
     function __construct($titulo,$autor,$anoPublic){
        $this->titulo = $titulo;
@@ -15,21 +15,24 @@ class Livro{
 
     function emprestar($disponivel){
        if($this->disponivel){
-        
         $this->disponivel = false;
-
         echo" O '$this->titulo' foi emprestado.<br>";
+    }else{
+
     }
 
     }
     function devolver($disponivel){
-        if($this->disponivel == false){
             $this->disponivel = true;
             echo "O '$this->titulo' foi devolvido.";
-        }
     }
 
     function exibirDetalhes(){
+        if($this->disponivel){
+            $status = 'Disponível';
+        }else{
+            $status = 'emprestado';
+        }
         echo $this->titulo;
         echo $this->autor;
         echo $this->anoPublic;
