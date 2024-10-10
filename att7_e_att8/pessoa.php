@@ -3,9 +3,9 @@
 class pessoa
 {
 
-    private $nome;
-    private $sexo;
-    private $idade;
+    protected $nome;
+    protected $sexo;
+    protected $idade;
 
     function __construct($nome, $sexo, $idade)
     {
