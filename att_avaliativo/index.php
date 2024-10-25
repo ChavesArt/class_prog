@@ -5,8 +5,6 @@ include_once ("moto.php");
 
 
 $c1 = new carro(4,'Toyota','Corolla',2020);
-
-// echo "<pre>";
 echo "<b>Carro</b><br>";
 $c1->exibirInformacoes();
 
